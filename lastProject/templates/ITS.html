@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css\bootstrap.css">
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css\bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css\bootstrap-responsive.min.css">
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css\bootstrap-responsive.css">
+</head>
+
+<body>
+<div align="center" style="padding-top: 100px;">
+
+	<table class="table table-bordered" style ="width: 500px;" >
+	
+              <thead>
+                <tr>
+                  <th>Name</th>
+				  <th>Direction</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for place in places %}
+                    <tr>
+                    
+                    <td>{{ place.name }}</td>
+                    <td>{{ place.direction }}</td>
+                    {% if  place.crowded  ==  "yes" %}
+                      <td><i class="icon-thumbs-down"></i></td>
+                    {% else %}
+                      <td><i class="icon-thumbs-up"></i></td>
+                    {% endif %}
+                    
+                    
+                </tr>
+
+                {% endfor %}
+               <!--  <tr>
+                  
+                  <td>Suez Road</td>
+				          <td>Heliopolis to Tagamo3</td>
+                  <td><i class="icon-thumbs-up"></i></td>
+                  
+                </tr>
+                <tr>
+                  <td>Ismailia Road</td>
+				  <td>Heliopolis to Obour City</td>
+                  <td><i class="icon-thumbs-down"></i></td>
+                  
+                </tr> -->
+                
+              </tbody>
+            </table>
+			
+			
+</div>
+</body>
+</html>
